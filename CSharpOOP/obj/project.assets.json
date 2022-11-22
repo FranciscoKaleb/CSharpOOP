@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jyuvi\\OneDrive\\Desktop\\C# course\\Project01\\CSharpOOP\\CSharpOOP\\CSharpOOP.csproj",
+      "projectUniqueName": "C:\\Users\\jyuvi\\OneDrive\\Desktop\\GitCsharp\\CSharpOOP\\CSharpOOP\\CSharpOOP.csproj",
       "projectName": "CSharpOOP",
-      "projectPath": "C:\\Users\\jyuvi\\OneDrive\\Desktop\\C# course\\Project01\\CSharpOOP\\CSharpOOP\\CSharpOOP.csproj",
+      "projectPath": "C:\\Users\\jyuvi\\OneDrive\\Desktop\\GitCsharp\\CSharpOOP\\CSharpOOP\\CSharpOOP.csproj",
       "packagesPath": "C:\\Users\\jyuvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jyuvi\\OneDrive\\Desktop\\C# course\\Project01\\CSharpOOP\\CSharpOOP\\obj\\",
+      "outputPath": "C:\\Users\\jyuvi\\OneDrive\\Desktop\\GitCsharp\\CSharpOOP\\CSharpOOP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

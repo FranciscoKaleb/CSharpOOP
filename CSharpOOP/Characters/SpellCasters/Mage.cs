@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpOOP.Equipment.ArmorTypes.Light;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,31 @@ namespace CSharpOOP.Characters.SpellCasters
 {
     internal class Mage
     {
+        private int abilityPoints;
+        private string faction;
+        private int healthPoints;
+        private int level;
+        private string name;
+        private ClothRobe armor;
+
+        public int AbilityPoints { get; set; }
+        public string Faction { get; set; }
+        public int HealthPoints { get; set; }
+        public ClothRobe Armor { get; set; }
+
+        public void ArcaneWrath()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FireWall()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Meditation()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

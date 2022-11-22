@@ -1,27 +1,28 @@
 ﻿using System.Numerics;
 using System;
 using CSharpOOP.Characters.Melee;
+using System.Security.Cryptography.X509Certificates;
+using CSharpOOP.Equipment;
+using CSharpOOP.Equipment.WeaponTypes.Sharp;
 
 namespace CSharpOOP
 {
     public class EntryPoint
     {
+        
         static void Main()
         {
-            Warrior goodGuy = new Warrior("David", 165, 55); // this goodGuy is instance of class Warrior //
-            // goodGuy.Height = 165;
-            // goodGuy.Weight = 55;
-            // goodGuy.Name = "David";
+            Sword sword1 = new Sword();
+            Warrior goodGuy = new Warrior();
 
-            Warrior badGuy = new Warrior();
-            badGuy.Height = 180;
-            badGuy.Weight = 67;
-            badGuy.Name = "Saul";
+            goodGuy.AbilityPoints = 2;
+            goodGuy.Faction = "Righteous";
+            goodGuy.HealthPoints = 500;
+            goodGuy.Level = 1;
+            goodGuy.Name = "David";
+            goodGuy.Weapon = sword1;
 
-            System.Console.WriteLine(badGuy.Height);
-
-            goodGuy.greetings(badGuy); // calls the method greetings which outputs a console //
-            badGuy.greetings(goodGuy);
+            sword1.BloodThirst();
         }
     }
 }

@@ -3,36 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CSharpOOP.Equipment;
+using CSharpOOP.Equipment.ArmorTypes.Heavy;
+using CSharpOOP.Equipment.WeaponTypes.Sharp;
 
 namespace CSharpOOP.Characters.Melee
 {
-    internal class Warrior
+    public class Warrior
     {
-        private int height; // this part of the class is called a FIELD. only used inside a class
-        private int weight;
+        
+        private int abilityPoints;
+        private int healthPoints;
+        private int level;
+        private string faction;
         private string name;
+        private Axe weapon;
+        private Chainlink armor;
+        
 
-        public int Height { get; set; } // this part is called a PROPERTY. can be used outside the class
-        public int Weight { get; set; }
+        public int AbilityPoints { get; set; }
+        public int HealthPoints { get; set; }
+        public int Level { get; set; }
+        public string Faction { get; set; }
         public string Name { get; set; }
+        public Axe Weapon { get; set; }
+        public Chainlink Armor{ get; set; }    
 
-        public Warrior() // this part of the class is called a constructor //
+        public Warrior()
         {
 
         }
 
-        public Warrior(string name, int height, int weight)
+        public void SkinHarden()
         {
-            Name = name;
-            Height = height;
-            Weight = weight;
+            throw new NotImplementedException();
         }
 
-        // this part is called the METHOD, the action of a class
-        // inside the parenthesis we create an object of a class inside the class 
-        public void greetings(Warrior nameObject)
+        public void Strike()
         {
-            Console.WriteLine("Hello " + nameObject.Name + "");
+            throw new NotImplementedException();
+        }
+
+        public void Execute()
+        {
+            throw new NotImplementedException();
         }
     }
 }
