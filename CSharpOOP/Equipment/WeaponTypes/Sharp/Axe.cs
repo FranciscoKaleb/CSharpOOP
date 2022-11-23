@@ -6,11 +6,28 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Equipment.WeaponTypes.Sharp
 {
-    internal class Axe
+    public class Axe
     {
         private int damage;
 
-        public int Damage { get; set; }
+        public int Damage 
+        {
+            get
+            {
+                return damage;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    damage = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(String.Empty,"damage must be greater or equal 1");
+                }
+            }
+        }
 
         public Axe()
         {

@@ -12,17 +12,13 @@ namespace CSharpOOP
         
         static void Main()
         {
-            Sword sword1 = new Sword();
-            Warrior goodGuy = new Warrior();
 
-            goodGuy.AbilityPoints = 2;
-            goodGuy.Faction = "Righteous";
-            goodGuy.HealthPoints = 500;
-            goodGuy.Level = 1;
-            goodGuy.Name = "David";
-            goodGuy.Weapon = sword1;
+            Assassin assassin = new Assassin();
+            assassin.Name = "Marcus";
+            assassin.Greetings("kaleb");
 
-            sword1.BloodThirst();
+            
+
         }
     }
 }

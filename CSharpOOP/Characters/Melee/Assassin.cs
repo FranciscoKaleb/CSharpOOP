@@ -27,7 +27,15 @@ namespace CSharpOOP.Characters.Melee
             }
             set
             {
-                abilityPoints = value;
+                if(value >= 0)
+                {
+                    abilityPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty,"Ability Points cannot be negative");
+                }
+                
             }
         }
         public int HealthPoints 
@@ -37,8 +45,16 @@ namespace CSharpOOP.Characters.Melee
                 return healthPoints; 
             } 
             set 
-            { 
-                healthPoints = value; 
+            {
+
+                if (value >= 0)
+                {
+                    healthPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Health Points cannot be negative");
+                }
             } 
         }
         public int Level 
@@ -49,7 +65,14 @@ namespace CSharpOOP.Characters.Melee
             }
             set
             {
-                level = value;
+                if (value >= 0)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "level cannot be negative");
+                }
             }
         }
         public string Faction 
@@ -60,7 +83,14 @@ namespace CSharpOOP.Characters.Melee
             }
             set
             {
-               faction = value;
+                if (value == "melee")
+                {
+                    faction = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Assassin faction should be melee");
+                }
             }
         }
         public string Name 
@@ -70,8 +100,16 @@ namespace CSharpOOP.Characters.Melee
                 return name; 
             }
             set 
-            { 
-                name = value; 
+            {
+                if (value.Length <= 20)
+                {
+                    name = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(String.Empty,"Name cannot exceed 20 characters");
+                }
+                
             } 
         }
         public Dagger Weapon 
@@ -100,6 +138,11 @@ namespace CSharpOOP.Characters.Melee
         public Assassin()
         {
 
+        }
+
+        public void Greetings(String name)
+        {
+            Console.WriteLine("I am "+this.name+", Hello "+name+" "); // example of using this
         }
 
         public void Raze()

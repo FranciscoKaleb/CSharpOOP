@@ -10,7 +10,24 @@ namespace CSharpOOP.Equipment.WeaponTypes.Sharp
     {
         private int damage;
 
-        public int Damage { get; set; } 
+        public int Damage 
+        {
+            get
+            {
+                return damage;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    damage = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(String.Empty,"damage must greater or equal 1");
+                }
+            }
+        } 
 
         public Dagger()
         {

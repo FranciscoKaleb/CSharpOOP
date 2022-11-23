@@ -10,7 +10,24 @@ namespace CSharpOOP.Equipment.ArmorTypes.Heavy
     {
         private int armorPoints;
 
-        public int ArmorPoints { get; set; }
+        public int ArmorPoints 
+        {
+            get
+            {
+                return armorPoints;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    armorPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(String.Empty,"Armor points must be greater of equal to 1");
+                }
+            }
+        }
 
         public Chainlink()
         {
