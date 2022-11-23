@@ -142,7 +142,7 @@ namespace CSharpOOP.Characters.Melee
 
         public void Greetings(String name)
         {
-            Console.WriteLine("I am "+this.name+", Hello "+name+" "); // example of using this
+            Console.WriteLine("I am "+this.name+", Hello "+name+" "); // example of using thiss
         }
 
         public void Raze()
