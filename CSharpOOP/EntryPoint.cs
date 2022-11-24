@@ -21,7 +21,8 @@ namespace CSharpOOP
                 ""+warrior.Age+"\n" +
                 ""+warrior.Height+"\n" +
                 ""+warrior.Weight+"\n" +
-                ""+warrior.Weapon+"\n\n");
+                ""+warrior.Weapon+"\n" +
+                ""+warrior.Faction+"\n\n");
             Console.WriteLine("" + warrior1.Name + "\n" +
                 "" + warrior1.Age + "\n" +
                 "" + warrior1.Height + "\n" +

@@ -12,10 +12,16 @@ namespace CSharpOOP.Characters.SpellCasters
     {
         // FIELDS
         private int abilityPoints;
-        private string faction;
         private int healthPoints;
         private int level;
+
+        private int age;
+        private int height;
+        private int weight;
+
         private string name;
+        private string faction;
+
         private ClothRobe armor;
         private Stafff stafff;
 
@@ -76,6 +82,48 @@ namespace CSharpOOP.Characters.SpellCasters
                 }
             }
         }
+
+        public int Age
+        {
+            get
+            {
+                return this.age;
+            }
+            set
+            {
+                if(value >= 18)
+                {
+                    this.age = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(String.Empty, "you must be 18 or above to create a character");
+                }
+            }
+        }
+        public int Height
+        {
+            get
+            {
+                return this.height;
+            }
+            set
+            {
+                this.Height = value;
+            }
+        }
+        public int Weight
+        {
+            get
+            {
+                return this.weight;
+            }
+            set
+            {
+                this.weight = value;
+            }
+        }
+
         public string Faction
         {
             get
@@ -113,6 +161,7 @@ namespace CSharpOOP.Characters.SpellCasters
 
             }
         }
+
         public ClothRobe Armor 
         {
             get
@@ -137,6 +186,69 @@ namespace CSharpOOP.Characters.SpellCasters
         }
 
         //CONSTRUCTORS
+        public Necromancer()
+            : this("Young Skull")
+        {
+
+        }
+        public Necromancer(string name)
+            : this(name, "Spell Caster")
+        {
+
+        }
+        public Necromancer(string name, string faction)
+            : this(name, faction, 18)
+        {
+
+        }
+        public Necromancer(string name, string faction, int age)
+            : this(name, faction, age, 170)
+        {
+
+        }
+        public Necromancer(string name, string faction, int age, int height)
+            : this(name, faction, age, height, 65)
+        {
+
+        }
+        public Necromancer(string name, string faction, int age, int height, int weight)
+            : this(name, faction, age, height, weight, new Stafff())
+        {
+
+        }
+        public Necromancer(string name, string faction, int age, int height, int weight, Stafff weapon)
+            : this(name, faction, age, height, weight, weapon, new ClothRobe())
+        {
+
+        }
+        public Necromancer(string name, string faction, int age, int height, int weight, Stafff weapon, ClothRobe armor)
+            : this(name, faction, age, height, weight, weapon, armor, 10)
+        {
+            
+        }
+        public Necromancer(string name, string faction, int age, int height, int weight, Stafff weapon, ClothRobe armor, int abilityPoints)
+            : this(name, faction, age, height, weight, weapon, armor, abilityPoints, 100)
+        {
+            
+        }
+        public Necromancer(string name, string faction, int age, int height, int weight, Stafff weapon, ClothRobe armor, int abilityPoints, int healthPoints)
+            : this(name, faction, age, height, weight, weapon, armor, abilityPoints, healthPoints, 1)
+        {
+            
+        }
+        public Necromancer(string name, string faction, int age, int height, int weight, Stafff weapon, ClothRobe armor, int abilityPoints, int healthPoints, int level)
+        {
+            this.name = name;
+            this.faction = faction;
+            this.age = age;
+            this.height = height;
+            this.weight = weight;
+            this.stafff = weapon;
+            this.armor = armor;
+            this.abilityPoints = abilityPoints;
+            this.healthPoints = healthPoints;
+            this.level = level;
+        }
 
         //METHODS
         public void Greetings(String name)

@@ -210,13 +210,37 @@ namespace CSharpOOP.Characters.Melee
 
         }
         public Warrior(string name, int age, int height, int weight, Axe weapon, Chainlink armor)
+            : this(name, age, height, weight, weapon, armor, "melee")
         {
-            this.Name = name;
-            this.Age = age;
-            this.Height = height;
-            this.Weight = weight;
+
+        }
+        public Warrior(string name, int age, int height, int weight, Axe weapon, Chainlink armor, string faction)
+            : this(name, age, height, weight, weapon, armor, faction, 10)
+        {
+            
+        }
+        public Warrior(string name, int age, int height, int weight, Axe weapon, Chainlink armor, string faction, int abilityPoints)
+            : this(name, age, height, weight, weapon, armor, faction, abilityPoints, 100)
+        {
+            
+        }
+        public Warrior(string name, int age, int height, int weight, Axe weapon, Chainlink armor, string faction, int abilityPoints, int healthPoints)
+            : this(name, age, height, weight, weapon, armor, faction, abilityPoints, healthPoints, 1)
+        {
+            
+        }
+        public Warrior(string name, int age, int height, int weight, Axe weapon, Chainlink armor, string faction, int abilityPoints, int healthPoints, int level)
+        {
+            this.name = name;
+            this.age = age;
+            this.height = height;
+            this.weight = weight;
             this.weapon = weapon;
-            this.Armor = armor;
+            this.armor = armor;
+            this.faction = faction;
+            this.abilityPoints = abilityPoints; 
+            this.healthPoints = healthPoints;
+            this.level = level;
         }
 
         // METHODS

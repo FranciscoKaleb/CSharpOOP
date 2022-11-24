@@ -178,10 +178,70 @@ namespace CSharpOOP.Characters.Melee
 
         //CONSTRUCTORS
         public Assassin()
+            : this("Young assassin")
         {
 
         }
+        public Assassin(string name)
+            : this(name, 18)
+        {
 
+        }
+        public Assassin(string name, int age)
+            : this(name, age, 165)
+        {
+
+        }
+        public Assassin(string name, int age, int height)
+            : this(name, age, height, 57)
+        {
+
+        }
+        public Assassin(string name, int age, int height, int weight)
+            : this(name, age, height, weight, new Dagger())
+        {
+
+        }
+        public Assassin(string name, int age, int height, int weight, Dagger weapon)
+            : this(name, age, height, weight, weapon, new Chainlink())
+        {
+
+        }
+        public Assassin(string name, int age, int height, int weight, Dagger weapon, Chainlink armor)
+            : this(name, age, height, weight, weapon, armor, "melee")
+        {
+
+        }
+        public Assassin(string name, int age, int height, int weight, Dagger weapon, Chainlink armor, string faction)
+            : this(name, age, height, weight, weapon, armor, faction, 10)
+        {
+            
+        }
+        public Assassin(string name, int age, int height, int weight, Dagger weapon, Chainlink armor, string faction, int abilityPoints)
+            : this(name, age, height, weight, weapon, armor, faction, abilityPoints, 100)
+        {
+
+        }
+        public Assassin(string name, int age, int height, int weight, Dagger weapon, Chainlink armor, string faction, int abilityPoints, int healthPoints)
+            : this(name, age, height, weight, weapon, armor, faction, abilityPoints, healthPoints, 1)
+        {
+
+        }
+        public Assassin(string name, int age, int height, int weight, Dagger weapon, Chainlink armor, string faction,  int abilityPoints, int healthPoints, int level)
+
+        {
+            this.name = name;
+            this.age = age;
+            this.height = height;
+            this.weight = weight;
+            this.weapon = weapon;
+            this.armor = armor;
+            this.faction = faction;
+            this.abilityPoints = abilityPoints;
+            this.healthPoints = healthPoints;
+            this.level = level;
+        }
+       
         //METHODS
         public void Greetings(String name)
         {
