@@ -10,6 +10,7 @@ namespace CSharpOOP.Characters.SpellCasters
 {
     internal class Necromancer
     {
+        // FIELDS
         private int abilityPoints;
         private string faction;
         private int healthPoints;
@@ -18,17 +19,18 @@ namespace CSharpOOP.Characters.SpellCasters
         private ClothRobe armor;
         private Stafff stafff;
 
+        // PROPERTIES
         public int AbilityPoints
         {
             get
             {
-                return abilityPoints;
+                return this.abilityPoints;
             }
             set
             {
                 if (value >= 0)
                 {
-                    abilityPoints = value;
+                    this.abilityPoints = value;
                 }
                 else
                 {
@@ -41,14 +43,14 @@ namespace CSharpOOP.Characters.SpellCasters
         {
             get
             {
-                return healthPoints;
+                return this.healthPoints;
             }
             set
             {
 
                 if (value >= 0)
                 {
-                    healthPoints = value;
+                    this.healthPoints = value;
                 }
                 else
                 {
@@ -60,13 +62,13 @@ namespace CSharpOOP.Characters.SpellCasters
         {
             get
             {
-                return level;
+                return this.level;
             }
             set
             {
                 if (value >= 0)
                 {
-                    level = value;
+                    this.level = value;
                 }
                 else
                 {
@@ -78,13 +80,13 @@ namespace CSharpOOP.Characters.SpellCasters
         {
             get
             {
-                return faction;
+                return this.faction;
             }
             set
             {
                 if (value == "SpellCaster")
                 {
-                    faction = value;
+                    this.faction = value;
                 }
                 else
                 {
@@ -96,13 +98,13 @@ namespace CSharpOOP.Characters.SpellCasters
         {
             get
             {
-                return name;
+                return this.name;
             }
             set
             {
                 if (value.Length <= 20)
                 {
-                    name = value;
+                    this.name = value;
                 }
                 else
                 {
@@ -111,19 +113,46 @@ namespace CSharpOOP.Characters.SpellCasters
 
             }
         }
-        public ClothRobe Armor { get; set; }
-        public Stafff Stafff { get; set; }
+        public ClothRobe Armor 
+        {
+            get
+            {
+                return armor;
+            }
+            set
+            {
+                armor = value;
+            } 
+        }
+        public Stafff Stafff 
+        {
+            get
+            {
+                return stafff;
+            }
+            set
+            {
+                stafff = value;
+            } 
+        }
 
+        //CONSTRUCTORS
+
+        //METHODS
+        public void Greetings(String name)
+        {
+            Console.WriteLine("I am " + this.name + ", Hello " + name + " nice to meet you");
+            // example of using this with
+            // parameter and field using same word
+        }
         public void ShadowRage()
         {
             throw new NotImplementedException();
         }
-
         public void VampireTouch()
         {
             throw new NotImplementedException();
         }
-
         public void BoneShield()
         {
             throw new NotImplementedException();

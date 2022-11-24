@@ -14,13 +14,13 @@ namespace CSharpOOP.Equipment.WeaponTypes.Sharp
         {
             get
             {
-                return damage;
+                return this.damage;
             }
             set
             {
                 if(value >= 1)
                 {
-                    damage = value;
+                    this.damage = value;
                 }
                 else
                 {
@@ -31,7 +31,7 @@ namespace CSharpOOP.Equipment.WeaponTypes.Sharp
 
         public Sword()
         {
-
+            this.Damage = 10;
         }
 
         public void BloodThirst()

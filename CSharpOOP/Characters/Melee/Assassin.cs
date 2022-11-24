@@ -10,26 +10,32 @@ namespace CSharpOOP.Characters.Melee
 {
     public class Assassin
     {
+        // FIELDS
         private int abilityPoints;
         private int healthPoints;
         private int level;
         private string faction;
+
         private string name;
+        private int age;
+        private int height;
+        private int weight;
+
         private Dagger weapon;
         private Chainlink armor;
 
-
+        // PROPERTIES
         public int AbilityPoints 
         {
             get
             {
-                return abilityPoints;
+                return this.abilityPoints;
             }
             set
             {
                 if(value >= 0)
                 {
-                    abilityPoints = value;
+                    this.abilityPoints = value;
                 }
                 else
                 {
@@ -42,14 +48,14 @@ namespace CSharpOOP.Characters.Melee
         {
             get 
             { 
-                return healthPoints; 
+                return this.healthPoints; 
             } 
             set 
             {
 
                 if (value >= 0)
                 {
-                    healthPoints = value;
+                    this.healthPoints = value;
                 }
                 else
                 {
@@ -61,13 +67,13 @@ namespace CSharpOOP.Characters.Melee
         { 
             get
             {
-                return level;
+                return this.level;
             }
             set
             {
                 if (value >= 0)
                 {
-                    level = value;
+                    this.level = value;
                 }
                 else
                 {
@@ -79,13 +85,13 @@ namespace CSharpOOP.Characters.Melee
         {
             get
             {
-                return faction;
+                return this.faction;
             }
             set
             {
                 if (value == "melee")
                 {
-                    faction = value;
+                    this.faction = value;
                 }
                 else
                 {
@@ -93,17 +99,18 @@ namespace CSharpOOP.Characters.Melee
                 }
             }
         }
+
         public string Name 
         {
             get 
             { 
-                return name; 
+                return this.name; 
             }
             set 
             {
                 if (value.Length <= 20)
                 {
-                    name = value;
+                    this.name = value;
                 }
                 else
                 {
@@ -112,49 +119,84 @@ namespace CSharpOOP.Characters.Melee
                 
             } 
         }
+        public int Age
+        {
+            get
+            {
+                return this.age;
+            }
+            set
+            {
+                this.age = value;
+            }
+        }
+        public int Height
+        {
+            get
+            {
+                return this.height;
+            }
+            set
+            {
+                this.height = value;
+            }
+        }
+        public int Weight
+        {
+            get
+            {
+                return this.weight;
+            }
+            set
+            {
+                this.weight = value;
+            }
+        }
+
         public Dagger Weapon 
         { 
             get
             {
-                return weapon;
+                return this.weapon;
             }
             set
             {
-                weapon = value;
+                this.weapon = value;
             } 
         }
         public Chainlink Armor 
         {
             get
             {
-                return armor;
+                return this.armor;
             }
             set
             {
-                armor = value;
+                this.armor = value;
             }
         }
 
+        //CONSTRUCTORS
         public Assassin()
         {
 
         }
 
+        //METHODS
         public void Greetings(String name)
         {
-            Console.WriteLine("I am "+this.name+", Hello "+name+" "); // example of using thiss
+            Console.WriteLine("I am " + this.name + ", Hello " + name + " nice to meet you"); 
+            // example of using this with
+            // parameter and field using same word
         }
-
         public void Raze()
         {
             throw new NotImplementedException();
         }
-
         public void BleedToDeath()
         {
             throw new NotImplementedException();
         }
-
         public void Survival()
         {
             throw new NotImplementedException();
