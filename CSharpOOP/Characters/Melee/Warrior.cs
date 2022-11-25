@@ -11,21 +11,55 @@ namespace CSharpOOP.Characters.Melee
 {
     public class Warrior
     {
+        //CONSTANTS
+        private const int DEFAULT_HEIGHT = 170;
+        private const int DEFAULT_WEIGHT = 60;
+        private const string DEFAULT_NAME = "Young Warrior";
+        private const string DEFAULT_FACTION = "melee";
+        private const int DEFAULT_AGE = 18;
+        private const int DEFAULT_STAT = 10;
+        private const int DEFAULT_STARTING_HEALTH = 100;
+        private const int DEFAULT_STARTING_LEVEL = 1;
+        private readonly Axe DEFAULT_AXE_WEAPON = new Axe();
+        private readonly Chainlink DEFAULT_ARMOR_WEAPON = new Chainlink();
+
+        //NON-CONSTANT VARIABLES
+        private static int DEFAULT_STARTING_COUNTER = 1;
+
         // FIELDS
+        private static int idCounter; // not a field?
+        private readonly int id;        
         private int abilityPoints;
         private int healthPoints;
         private int level;
         private string faction;
-
         private string name;
         private int age;
         private int height;
         private int weight;
-
         private Axe weapon;
         private Chainlink armor;
 
         // PROPERTIES
+        public static int IdCounter
+        {
+            get
+            {
+                return Warrior.idCounter;
+            }
+            private set
+            {
+                Warrior.idCounter = DEFAULT_STARTING_COUNTER;
+                DEFAULT_STARTING_COUNTER++;
+            }
+        } // not a property?
+        public int Id
+        {
+            get
+            {
+                return this.id;
+            }
+        }    
         public int AbilityPoints
         {
             get
@@ -100,7 +134,6 @@ namespace CSharpOOP.Characters.Melee
                 }
             }
         }
-
         public string Name 
         { 
             get
@@ -154,7 +187,6 @@ namespace CSharpOOP.Characters.Melee
                 this.weight = value;
             }
         }
-
         public Axe Weapon 
         {
             get
@@ -180,22 +212,22 @@ namespace CSharpOOP.Characters.Melee
 
         // CONSTRUCTORS
         public Warrior()
-            : this("Young Warrior")
+            : this(DEFAULT_NAME)
         {
 
         }
         public Warrior(string name)
-            : this(name, 18)
+            : this(name, DEFAULT_AGE)
         {
 
         }
         public Warrior(string name, int age)
-            : this(name, age, 170)
+            : this(name, age, DEFAULT_HEIGHT)
         {
 
         }
         public Warrior(string name, int age, int height)
-            : this(name, age, height, 65)
+            : this(name, age, height, DEFAULT_WEIGHT)
         {
 
         }
@@ -210,22 +242,22 @@ namespace CSharpOOP.Characters.Melee
 
         }
         public Warrior(string name, int age, int height, int weight, Axe weapon, Chainlink armor)
-            : this(name, age, height, weight, weapon, armor, "melee")
+            : this(name, age, height, weight, weapon, armor, DEFAULT_FACTION)
         {
 
         }
         public Warrior(string name, int age, int height, int weight, Axe weapon, Chainlink armor, string faction)
-            : this(name, age, height, weight, weapon, armor, faction, 10)
+            : this(name, age, height, weight, weapon, armor, faction, DEFAULT_STAT)
         {
             
         }
         public Warrior(string name, int age, int height, int weight, Axe weapon, Chainlink armor, string faction, int abilityPoints)
-            : this(name, age, height, weight, weapon, armor, faction, abilityPoints, 100)
+            : this(name, age, height, weight, weapon, armor, faction, abilityPoints, DEFAULT_STARTING_HEALTH)
         {
             
         }
         public Warrior(string name, int age, int height, int weight, Axe weapon, Chainlink armor, string faction, int abilityPoints, int healthPoints)
-            : this(name, age, height, weight, weapon, armor, faction, abilityPoints, healthPoints, 1)
+            : this(name, age, height, weight, weapon, armor, faction, abilityPoints, healthPoints, DEFAULT_STARTING_LEVEL)
         {
             
         }
@@ -241,6 +273,8 @@ namespace CSharpOOP.Characters.Melee
             this.abilityPoints = abilityPoints; 
             this.healthPoints = healthPoints;
             this.level = level;
+            Warrior.IdCounter++;
+            this.id = IdCounter;
         }
 
         // METHODS
@@ -261,6 +295,15 @@ namespace CSharpOOP.Characters.Melee
         public void Execute()
         {
             throw new NotImplementedException();
+        }
+        public static void GetDefaultValues(Warrior warrior)
+        {
+            Console.WriteLine($"Default Name: {DEFAULT_NAME}" +
+                $"\nDefault Age: {DEFAULT_AGE}" +
+                $"\nDefault weight: {DEFAULT_WEIGHT}"+
+                $"\nDefault Height: {DEFAULT_HEIGHT}"+
+                $"\nDefault Sword Damage:{warrior.DEFAULT_AXE_WEAPON.Damage}"
+                );
         }
     }
 }

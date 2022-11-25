@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Equipment.ArmorTypes.Light
 {
-    internal class ClothRobe
+    public class ClothRobe
     {
         private int armorPoints;
 

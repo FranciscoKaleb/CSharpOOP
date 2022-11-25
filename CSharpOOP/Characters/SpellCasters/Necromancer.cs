@@ -1,15 +1,19 @@
-﻿using CSharpOOP.Equipment.ArmorTypes.Light;
+﻿using CSharpOOP.Characters.Melee;
+using CSharpOOP.Equipment.ArmorTypes.Light;
 using CSharpOOP.Equipment.WeaponTypes.Blunt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CSharpOOP.Characters.Melee;
 
 namespace CSharpOOP.Characters.SpellCasters
 {
-    internal class Necromancer
+    public class Necromancer
     {
+
+               
         // FIELDS
         private int abilityPoints;
         private int healthPoints;
@@ -269,5 +273,6 @@ namespace CSharpOOP.Characters.SpellCasters
         {
             throw new NotImplementedException();
         }
+        
     }
 }

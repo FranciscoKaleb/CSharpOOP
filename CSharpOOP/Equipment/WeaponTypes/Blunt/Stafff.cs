@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Equipment.WeaponTypes.Blunt
 {
-    internal class Stafff
+    public class Stafff
     {
         private int damage;
 

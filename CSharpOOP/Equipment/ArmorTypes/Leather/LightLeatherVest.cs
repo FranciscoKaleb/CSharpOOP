@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Equipment.ArmorTypes.Leather
 {
-    internal class LightLeatherVest
+    public class LightLeatherVest
     {
         private int armorPoints;
 

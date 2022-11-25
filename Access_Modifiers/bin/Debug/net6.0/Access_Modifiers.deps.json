@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Access_Modifiers/1.0.0": {
+        "dependencies": {
+          "CSharpOOP": "1.0.0"
+        },
+        "runtime": {
+          "Access_Modifiers.dll": {}
+        }
+      },
+      "CSharpOOP/1.0.0": {
+        "runtime": {
+          "CSharpOOP.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Access_Modifiers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CSharpOOP/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

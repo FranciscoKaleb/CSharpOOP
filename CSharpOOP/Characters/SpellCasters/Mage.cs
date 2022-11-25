@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Characters.SpellCasters
 {
-    internal class Mage
+    public class Mage
     {
         //FIELDS
         private int abilityPoints;  
