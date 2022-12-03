@@ -4,7 +4,9 @@ using CSharpOOP.Characters.Melee;
 using System.Security.Cryptography.X509Certificates;
 using CSharpOOP.Equipment;
 using CSharpOOP.Equipment.WeaponTypes.Sharp;
+using CSharpOOP.Equipment.ArmorTypes.Heavy;
 using CSharpOOP.Characters.SpellCasters;
+using CSharpOOP.Enumerations;
 
 namespace CSharpOOP
 {
@@ -13,10 +15,8 @@ namespace CSharpOOP
         
         static void Main()
         {
-           Warrior warrior = new Warrior();
-            Warrior.GetDefaultValues(warrior);
-
-            
+            Warrior warrior = new Warrior("Tulfo", 17, 76, 175, Faction.Chaos);
+            Warrior.GetWarriorInfo(warrior);
 
         }
     }

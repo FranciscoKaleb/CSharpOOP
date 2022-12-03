@@ -12,8 +12,7 @@ namespace CSharpOOP.Characters.SpellCasters
 {
     public class Necromancer
     {
-
-               
+     
         // FIELDS
         private int abilityPoints;
         private int healthPoints;
@@ -86,7 +85,7 @@ namespace CSharpOOP.Characters.SpellCasters
                 }
             }
         }
-
+        
         public int Age
         {
             get

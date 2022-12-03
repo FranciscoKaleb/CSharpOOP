@@ -9,6 +9,8 @@ namespace CSharpOOP.Equipment.WeaponTypes.Sharp
     public class Axe
     {
         private int damage;
+        private int kills;
+        private int killDamageBonus;
 
         public int Damage 
         {
@@ -26,6 +28,28 @@ namespace CSharpOOP.Equipment.WeaponTypes.Sharp
                 {
                     throw new ArgumentOutOfRangeException(String.Empty,"damage must be greater or equal 1");
                 }
+            }
+        }
+        public int Kills
+        {
+            get
+            {
+                return kills;
+            }
+            set
+            {
+                kills = value;
+            }
+        }
+        public int KillDamageBonus
+        {
+            get
+            {
+                return killDamageBonus;
+            }
+            set
+            {
+                killDamageBonus = value;    
             }
         }
 
