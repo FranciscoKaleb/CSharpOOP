@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpOOP.Equipment.WeaponTypes.Blunt
+namespace CSharpOOP.Equipment.WeaponTypes.Dagger
 {
-    public class Hammer
+    public class Dagger
     {
         private int damage;
 
-        public int Damage 
+        public int Damage
         {
             get
             {
@@ -18,19 +18,23 @@ namespace CSharpOOP.Equipment.WeaponTypes.Blunt
             }
             set
             {
-                if(value >= 1)
+                if (value >= 1)
                 {
                     damage = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(String.Empty,"damage should be equal or greater than 1");
+                    throw new ArgumentOutOfRangeException(string.Empty, "damage must greater or equal 1");
                 }
-                
-            } 
+            }
         }
 
-        public void Stun()
+        public Dagger()
+        {
+
+        }
+
+        public void Poison()
         {
 
         }

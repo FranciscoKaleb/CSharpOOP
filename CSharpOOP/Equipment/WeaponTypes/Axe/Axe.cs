@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpOOP.Equipment.WeaponTypes.Sharp
+namespace CSharpOOP.Equipment.WeaponTypes.Axe
 {
     public class Axe
     {
@@ -12,21 +12,21 @@ namespace CSharpOOP.Equipment.WeaponTypes.Sharp
         private int kills;
         private int killDamageBonus;
 
-        public int Damage 
+        public int Damage
         {
             get
             {
-                return this.damage;
+                return damage;
             }
             set
             {
                 if (value >= 1)
                 {
-                    this.damage = value;
+                    damage = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(String.Empty,"damage must be greater or equal 1");
+                    throw new ArgumentOutOfRangeException(string.Empty, "damage must be greater or equal 1");
                 }
             }
         }
@@ -49,13 +49,13 @@ namespace CSharpOOP.Equipment.WeaponTypes.Sharp
             }
             set
             {
-                killDamageBonus = value;    
+                killDamageBonus = value;
             }
         }
 
         public Axe()
         {
-            this.Damage = 10;
+            Damage = 10;
         }
 
         public void HackAndSlash()

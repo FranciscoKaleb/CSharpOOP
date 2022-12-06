@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpOOP.Equipment.WeaponTypes.Sharp
+namespace CSharpOOP.Equipment.WeaponTypes.Hammer
 {
-    public class Dagger
+    public class Hammer
     {
         private int damage;
 
-        public int Damage 
+        public int Damage
         {
             get
             {
@@ -24,17 +24,13 @@ namespace CSharpOOP.Equipment.WeaponTypes.Sharp
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(String.Empty,"damage must greater or equal 1");
+                    throw new ArgumentOutOfRangeException(string.Empty, "damage should be equal or greater than 1");
                 }
+
             }
-        } 
-
-        public Dagger()
-        {
-
         }
 
-        public void Poison()
+        public void Stun()
         {
 
         }

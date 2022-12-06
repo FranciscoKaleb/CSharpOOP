@@ -4,34 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpOOP.Equipment.WeaponTypes.Sharp
+namespace CSharpOOP.Equipment.WeaponTypes.Sharp.Sword
 {
     public class Sword
     {
         private int damage;
 
-        public int Damage 
+        public int Damage
         {
             get
             {
-                return this.damage;
+                return damage;
             }
             set
             {
-                if(value >= 1)
+                if (value >= 1)
                 {
-                    this.damage = value;
+                    damage = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(String.Empty,"damage must be greater or equal 1");
+                    throw new ArgumentOutOfRangeException(string.Empty, "damage must be greater or equal 1");
                 }
             }
         }
 
         public Sword()
         {
-            this.Damage = 10;
+            Damage = 10;
         }
 
         public void BloodThirst()

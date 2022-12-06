@@ -17,12 +17,6 @@ namespace CSharpOOP
             // Console s = new Console();
             // Console class cannot/ doesnt need an instance
         }
-        public static void RandomRole()
-        {
-            Array values = Enum.GetValues(typeof(Role));
-            Random random = new Random();
-            Role x = (Role)values.GetValue(random.Next(values.Length));
-            
-        }
+
     }
 }

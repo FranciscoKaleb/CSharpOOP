@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Numerics;
-using CSharpOOP.Characters.Melee;
 using CSharpOOP.Characters.SpellCasters;
+using CSharpOOP.Units.Zold;
 
 namespace Access_Modifiers
 {

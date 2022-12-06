@@ -13,15 +13,19 @@ namespace CSharpOOP.Enumerations
         Neutral,
         Chaos
     }
-    public enum Role 
+    public enum ArmorType 
     {
-        Warrior,
-        Assassin,
-        Knight,
-        Mage,
-        Druid,
-        Necromancer           
+        Wood,
+        Metal,
+        Meteorite,
+        Titanium
     }
-    
+    public enum MovementType 
+    {
+        Land,
+        Air
+    }
+
+
 
 }
