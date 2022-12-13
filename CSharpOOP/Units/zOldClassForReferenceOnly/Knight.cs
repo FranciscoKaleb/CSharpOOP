@@ -1,5 +1,5 @@
 ﻿using CSharpOOP.Equipment.ArmorTypes.Heavy;
-using CSharpOOP.Equipment.WeaponTypes.Sharp.Sword;
+using CSharpOOP.Equipment.WeaponTypes.Sword;
 using System;
 using System.Collections.Generic;
 using System.Linq;

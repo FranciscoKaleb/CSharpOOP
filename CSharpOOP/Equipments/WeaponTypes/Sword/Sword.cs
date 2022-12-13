@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpOOP.Equipment.WeaponTypes.Blade
+namespace CSharpOOP.Equipment.WeaponTypes.Sword
 {
-    public class Blade : Weapon
+    public class Sword : Weapon
     {
-        public Blade()
-        {
 
+        public Sword()
+        {
+            Damage = 70;
         }
+
     }
 }

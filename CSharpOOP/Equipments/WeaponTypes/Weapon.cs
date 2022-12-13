@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Equipment.WeaponTypes
 {
-    public class Weapon : Equipment
+    public class Weapon : Equipments
     {
         private const int DEFAULT_DAMAGE = 10;
 

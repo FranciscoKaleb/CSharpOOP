@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpOOP.Abilities.Hero;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +15,17 @@ namespace CSharpOOP.Units.Movable.Hero
         private const int DEFAULT_AGILITY = 10;
         private const int DEFAULT_INTELLIGENCE = 10;
         private const int DEFAULT_MANA_POINTS = 100;
-        // private const Item > weapon, armor, artifact
+        private const int DEFAULT_BASE_DAMAGE = 10;
+        
 
         private int level;
+        private int baseDamage;
         private int skillPoints;
         private int strength;
         private int agility;
         private int intelligence;
         private int manaPoints;
+        private ItemInventory inventory;
 
         public int Level 
         { 
@@ -34,6 +38,17 @@ namespace CSharpOOP.Units.Movable.Hero
                 this.level = value; 
             } 
         }   
+        public int BaseDamage
+        {
+            get
+            {
+                return baseDamage;
+            }
+            set
+            {
+                baseDamage = value;
+            }
+        }
         public int SkillPoints
         {
             get
@@ -89,15 +104,20 @@ namespace CSharpOOP.Units.Movable.Hero
                 this.manaPoints = value;
             }
         }
+        public ItemInventory Inventory
+        {
+            get { return inventory; }
+            set { inventory = value; }
+        }
 
         public Hero()
             :this(DEFAULT_LEVEL, DEFAULT_SKILL_POINTS, DEFAULT_STRENGTH, DEFAULT_AGILITY
-                 ,DEFAULT_INTELLIGENCE,DEFAULT_MANA_POINTS)
+                 ,DEFAULT_INTELLIGENCE,DEFAULT_MANA_POINTS, DEFAULT_BASE_DAMAGE)
         {
 
         }
         public Hero(int level, int skillPoints, int strength, int agility,
-            int intelligence, int manaPoints)
+            int intelligence, int manaPoints, int baseDamage)
         {
             Level = level;
             SkillPoints = skillPoints;
@@ -105,7 +125,10 @@ namespace CSharpOOP.Units.Movable.Hero
             Agility = agility;
             Intelligence = intelligence;
             ManaPoints = manaPoints;
+            BaseDamage = baseDamage;
+            Inventory = new ItemInventory();
         }
+
 
        
     }

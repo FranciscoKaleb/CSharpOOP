@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Equipment
 {
-    public class Equipment
+    public class Equipments
     {
         private const int DEFAULT_WEIGHT = 1;
 
@@ -24,7 +24,7 @@ namespace CSharpOOP.Equipment
             } 
         }
 
-        public Equipment()
+        public Equipments()
         {
             Weight = DEFAULT_WEIGHT;
         }
