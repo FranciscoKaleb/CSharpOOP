@@ -1,5 +1,7 @@
-﻿using CSharpOOP.Abilities.Hero;
+﻿using CSharpOOP.Abilities;
+using CSharpOOP.Abilities.Hero;
 using CSharpOOP.Equipment.WeaponTypes.Blade;
+using CSharpOOP.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,10 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Units.Movable.Hero.Samurai
 {
-    public class Samurai : Hero
+    public class Samurai : Hero , ISamurai
     {
         private Blade weapon;
+        private Ability ability;
         private OmniSlash omniSlash;
 
         public Blade Weapon
@@ -36,6 +39,8 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
             }
         }
 
+        public Blade Blade { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public Samurai()
         {
             Weapon = new Blade();
@@ -59,13 +64,23 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
                 $"mana: {hero.ManaPoints}\n" +
                 $"weapon: {hero.Weapon}\n\n\n");
         }
-
-        public void SkillCast(Unit unit, OmniSlash OmniSlash)
+        public void SkillCast(Unit target, OmniSlash OmniSlash)
         {
             OmniSlash = this.OmniSlash;
-            unit.HealthPoints = unit.HealthPoints - this.OmniSlash.Damage;
-            Console.WriteLine($"{this.Name} attacks {unit.Name}");
-            
+            target.HealthPoints = target.HealthPoints - (this.OmniSlash.Damage + Weapon.Damage);
+            Console.WriteLine($"{this.Name} attacks {target.Name}\n\n");        
+        }       
+        public void Attack()
+        {
+            throw new NotImplementedException();
+        }
+        public void Move()
+        {
+            throw new NotImplementedException();
+        }
+        public void Stop()
+        {
+            throw new NotImplementedException();
         }
     }
 }

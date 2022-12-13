@@ -20,6 +20,8 @@ namespace CSharpOOP
         {
             Samurai hero = new Samurai();
             Samurai hero2 = new Samurai();
+            hero.Name = "first Samurai";
+            hero2.Name = "second Samurai";
             Samurai.SeeStatus(hero);
             Samurai.SeeStatus(hero2);
 

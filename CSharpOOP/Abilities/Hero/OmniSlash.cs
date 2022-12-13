@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Abilities.Hero
 {
-    public class OmniSlash
+    public class OmniSlash : Ability
     {
         private int damage;
 
