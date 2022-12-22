@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Units.Movable
 {
-    public class Movable : Unit
+    public abstract class Movable : Unit
     {
         private const int DEFAULT_MOVEMENT_SPEED = 100;
         private const MovementType DEFAULT_MOVEMENT_TYPE = MovementType.Land;
@@ -49,14 +49,8 @@ namespace CSharpOOP.Units.Movable
             MovementType = movementType;
         }
 
-        public virtual void Move(int pauseBetweenMove)
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                Thread.Sleep(pauseBetweenMove);
-                Console.WriteLine($"I am {Name}, moving forward!\n");
-            }
-        }
+        public abstract void Move(int pauseBetweenMove);
+        public abstract void Stop(Unit unit);
 
     }
 }

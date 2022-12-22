@@ -10,6 +10,7 @@ namespace CSharpOOP.Equipment
     {
         private const int DEFAULT_WEIGHT = 1;
 
+        private int damage;
         private int weight;
         
         public int Weight 
@@ -23,10 +24,22 @@ namespace CSharpOOP.Equipment
                 weight = value; 
             } 
         }
+        public int Damage
+        {
+            get
+            {
+                return damage;
+            }
+            set
+            {
+                damage = value;
+            }
+        }
 
         public Equipments()
         {
             Weight = DEFAULT_WEIGHT;
+            Damage = 0;
         }
         
     }

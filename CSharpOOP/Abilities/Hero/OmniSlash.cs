@@ -10,7 +10,7 @@ namespace CSharpOOP.Abilities.Hero
     {
         private int damage;
 
-        public int Damage
+        public override int Damage
         {
             get { return damage; }
             set { damage = value; }

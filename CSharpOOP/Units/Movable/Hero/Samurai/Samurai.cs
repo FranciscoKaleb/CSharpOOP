@@ -10,13 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 using CSharpOOP.Equipment.WeaponTypes;
 
+
 namespace CSharpOOP.Units.Movable.Hero.Samurai
 {
     public class Samurai : Hero , ISamurai
     {
+       
+        // fields
         private Ability ability;
         private OmniSlash omniSlash;
         
+        // properties
         public OmniSlash OmniSlash
         {
             get
@@ -30,12 +34,92 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
         }      
         public Blade Blade { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         
+        // constructors
         public Samurai()
         {
             OmniSlash = new OmniSlash();
-            Inventory.Item[0] = new Blade();
         }
 
+        // methods
+        public override void SkillCast(Unit target, Ability OmniSlash)
+        {
+            target.HealthPoints = target.HealthPoints - (AbilitySlot.Ability[0].Damage);
+        }       
+        public override void PickUpItem(Equipments equipment, int slot)
+        {
+            Inventory.Item[slot] = equipment;
+            BaseDamage = BaseDamage + equipment.Damage;
+            
+        }
+        public override void Attack(Unit unit, bool start)
+        {
+            BaseDamage = BaseDamage - unit.ArmorPoints;
+            while (start == true)
+            {
+                Thread.Sleep(this.AttackSpeed);
+                unit.HealthPoints = ((unit.HealthPoints) - BaseDamage);
+                Console.WriteLine($"{unit.HealthPoints}");
+                if (unit.HealthPoints <= 0)
+                {
+                    start = false;
+                    Console.WriteLine($"{unit.Name} is dead");
+                    unit.IsAlive = false;
+                    gainExp((Hero)unit);
+                }            
+            }  
+        }
+        public override void Attack2(Hero target)
+        {
+            target.isAttacked(ApplyCritical(this.BaseDamage));
+        }
+        public int ApplyCritical(int damage)
+        {
+            double criticalChance = 0.4;
+            Random random = new Random();
+            Boolean isCritical = random.NextDouble() <= criticalChance;
+
+            if (isCritical)
+            {
+                damage = damage * 3;
+                Console.WriteLine("Critical");
+            }
+            else
+            {
+                damage = damage;
+            }
+            return damage;
+        }
+        public override void gainExp(Hero killed)
+        {
+            this.ExperiencePoints = this.ExperiencePoints + (killed.Level * 500);
+
+        }
+        public override void Move(int pauseBetweenMove)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Thread.Sleep(pauseBetweenMove);
+                Console.WriteLine($"I am {Name}, moving forward!\n");
+            }
+        }
+        public override void Stop(Unit unit)
+        {
+            
+        }
+        public override void getAbility(Ability ability, int slot)
+        {
+            AbilitySlot.Ability[slot] = ability;
+        }
+        public override void Greetings()
+        {
+            Console.WriteLine("Hello I am Samurai\n");
+        }
+        public override void isAttacked(int totalDamage)
+        {
+            HealthPoints = HealthPoints - totalDamage;
+        }
+
+        // static method/s
         public static void SeeStatus(Samurai hero)
         {
             Console.WriteLine($"name:{hero.Name}\n" +
@@ -50,40 +134,15 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
                 $"strength:{hero.Strength}\n" +
                 $"agility:{hero.Agility}\n" +
                 $"intelligence:{hero.Intelligence}\n" +
-                $"mana: {hero.ManaPoints}\n" +
-                $"Slot 1: {hero.Inventory.Item[0].ToString()}\n\n\n");
+                $"mana: {hero.ManaPoints}\n");
+                //$"Slot 1: {hero.Inventory.Item[0].ToString()}\n" +
+                //$"Slot 2: {hero.Inventory.Item[1].ToString()}\n" +
+                //$"Slot 3: {hero.Inventory.Item[2].ToString()}\n" +
+                //$"Slot 4: {hero.Inventory.Item[3].ToString()}\n" +
+                //$"Slot 5: {hero.Inventory.Item[4].ToString()}\n" +
+                //$"Slot 6: {hero.Inventory.Item[5].ToString()}\n");
         }
-        public static void SeeInventory(Samurai samurai)
-        {
-            Console.WriteLine($"{samurai.Inventory.Item[0]}\n" +
-                              $"{samurai.Inventory.Item[1]}\n" +
-                              $"{samurai.Inventory.Item[2]}\n" +
-                              $"{samurai.Inventory.Item[3]}\n" +
-                              $"{samurai.Inventory.Item[4]}\n" +
-                              $"{samurai.Inventory.Item[5]}");
-        }
-        public void SkillCast(Unit target, OmniSlash OmniSlash)
-        {
-            OmniSlash = this.OmniSlash;
-            target.HealthPoints = target.HealthPoints - (this.OmniSlash.Damage + BaseDamage);
-            Console.WriteLine($"{this.Name} attacks {target.Name}\n\n");        
-        }       
-        public void PickUpItem(Weapon weapon, int slot)
-        {
-            Inventory.Item[slot] = weapon;
-            BaseDamage = BaseDamage + weapon.Damage;
-        }
-        public void Attack()
-        {
-            throw new NotImplementedException();
-        }
-        public void Move()
-        {
-            throw new NotImplementedException();
-        }
-        public void Stop()
-        {
-            throw new NotImplementedException();
-        }
+
+        
     }
 }

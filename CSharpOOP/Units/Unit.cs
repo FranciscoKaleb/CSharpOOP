@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Units
 {
-    public class Unit
+    public abstract class Unit
     {
+        public bool IsAlive = true;
+
         public const string DEFAULT_NAME = "Object";
         public const int DEFAULT_HEALTH_POINTS = 100;
         public const int DEFAULT_ARMOR_POINTS = 0;
@@ -88,6 +90,7 @@ namespace CSharpOOP.Units
             ArmorPoints = armorPoints;
             ArmorType = armorType;
         }
+        
       
     }
 }

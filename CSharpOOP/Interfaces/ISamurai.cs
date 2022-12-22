@@ -13,10 +13,7 @@ namespace CSharpOOP.Interfaces
     {
         Blade Blade { get; set; }
 
-        void SkillCast(Unit unit, OmniSlash omniSlash);
-        void Attack();
-        void Move();
-        void Stop();
+        
         
     }
 }
