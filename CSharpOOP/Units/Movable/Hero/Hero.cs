@@ -33,6 +33,7 @@ namespace CSharpOOP.Units.Movable.Hero
         private int agility;
         private int intelligence;
         private int manaPoints;
+        private bool isAlive;
         private ItemInventory inventory;
         private AbilitySlot abilitySlot;
 
@@ -135,6 +136,17 @@ namespace CSharpOOP.Units.Movable.Hero
                 this.manaPoints = value;
             }
         }
+        public bool IsAlive
+        {
+            get
+            {
+                return this.isAlive;
+            }
+            set
+            {
+                this.isAlive = value;
+            }
+        }
         public ItemInventory Inventory
         {
             get { return inventory; }
@@ -165,6 +177,7 @@ namespace CSharpOOP.Units.Movable.Hero
             BaseDamage = baseDamage;
             AttackSpeed = attackSpeed;
             HealthPoints = 500;
+            IsAlive = true;
             Inventory = new ItemInventory();
             AbilitySlot = new AbilitySlot();
         }
@@ -176,7 +189,7 @@ namespace CSharpOOP.Units.Movable.Hero
         public abstract void getAbility(Ability ability, int slot);
         public abstract void Greetings();
         public abstract void gainExp(Hero killed);
-        public abstract void isAttacked(int totalDamage);
+        public abstract void isAttacked(int totalDamage, Hero attacker);
 
         public static void SeeStatus(Hero hero)
         {

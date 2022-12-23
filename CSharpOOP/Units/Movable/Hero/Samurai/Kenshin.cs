@@ -58,7 +58,7 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
         }
         public override void Attack2(Hero target)
         {
-            target.isAttacked(ApplyCritical(this.BaseDamage));
+            target.isAttacked(ApplyCritical(this.BaseDamage),this);
         }
         public int ApplyCritical(int damage)
         {
@@ -101,7 +101,7 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
             this.ExperiencePoints = this.ExperiencePoints + (killed.Level * 500);
 
         }
-        public override void isAttacked(int totalDamage)
+        public override void isAttacked(int totalDamage, Hero attacker)
         {
 
         }

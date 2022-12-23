@@ -209,9 +209,11 @@ namespace CSharpOOP
         {
             Samurai samurai = new Samurai();
             Samurai samurai2 = new Samurai();
+            samurai2.ArmorPoints = 4;
             samurai2.HealthPoints = 500;
+
             Console.WriteLine($"Object 2 Health: {samurai2.HealthPoints}");
-            while (samurai2.HealthPoints>0)
+            while (samurai2.HealthPoints > 0)
             {
                 samurai.Attack2(samurai2);
                 Console.WriteLine($"HP: {samurai2.HealthPoints}");

@@ -70,7 +70,12 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
         }
         public override void Attack2(Hero target)
         {
-            target.isAttacked(ApplyCritical(this.BaseDamage));
+            target.isAttacked(ApplyCritical(this.BaseDamage),this);
+        }
+        public override void isAttacked(int totalDamage, Hero attacker)
+        {
+            totalDamage = totalDamage - ArmorPoints;
+            HealthPoints = HealthPoints - totalDamage;
         }
         public int ApplyCritical(int damage)
         {
@@ -114,10 +119,7 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
         {
             Console.WriteLine("Hello I am Samurai\n");
         }
-        public override void isAttacked(int totalDamage)
-        {
-            HealthPoints = HealthPoints - totalDamage;
-        }
+        
 
         // static method/s
         public static void SeeStatus(Samurai hero)
