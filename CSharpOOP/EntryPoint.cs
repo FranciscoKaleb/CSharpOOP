@@ -10,7 +10,6 @@ using CSharpOOP.Units.Movable;
 using CSharpOOP.Units.Movable.Hero;
 using CSharpOOP.Units.Movable.Hero.Samurai;
 using CSharpOOP.Equipment.WeaponTypes.Blade;
-using CSharpOOP.Equipment.WeaponTypes.Sword;
 using CSharpOOP.Abilities.Hero;
 using CSharpOOP.Abilities;
 using System.Diagnostics;
@@ -22,7 +21,7 @@ namespace CSharpOOP
 
         static void Main()
         {
-            criticalStrikeChanceScenario();
+            ItemAcquiringScenario();
         }
         
         public void SkillCastingScenario()
@@ -44,39 +43,22 @@ namespace CSharpOOP
 
             // Outputs the status of hero2 reduced damage
             Samurai.SeeStatus(hero2);
-        } // logic of Basic Skill Casting
+        }  //not good
         public static void ItemAcquiringScenario()
         {
-            string x = "";
             Samurai samurai = new Samurai();
-            Console.WriteLine("Set name for the Character:\n");
-            samurai.Name = Console.ReadLine();
-            Console.WriteLine($"hello {samurai.Name}\n " +
-                $"here is the list of items \n" +
-                $"type the item number of your chosen item \n" +
-                $"you have total of 6 inventory slots\n" +
-                $"1. Blade \n" +
-                $"2. Mirror \n" +
-                $"3. Chainmail \n" +
-                $"4. helmet \n" +
-                $"5. Sword \n" +
-                $"6. Boots \n");           
-                for (int slot = 0; slot < samurai.Inventory.Item.Length; slot++)
-                {
-                    Console.WriteLine($"Choose an item for item Slot {slot+1}\n");
-                    x = Console.ReadLine();
-                    if (x == "1")
-                    {
-                        samurai.PickUpItem(new Blade(samurai), slot);
-                    }
-                    if (x == "5")
-                    {
-                        samurai.PickUpItem(new Sword(), slot);
-                    }
-                }
-            Samurai.SeeStatus(samurai);
-            
-        } //logic of Object creation
+
+            Blade blade = new Blade();
+            Chainlink chainlink = new Chainlink();
+
+            Hero.SeeStatus(samurai);
+
+            samurai.PickUpItem(blade);
+            samurai.PickUpItem(chainlink);
+
+            Hero.SeeStatus(samurai);
+           
+        } //goods
         public static void CreatingListOfHeroScenario()
         {
             List<Hero> heroList = new List<Hero>();
@@ -87,7 +69,7 @@ namespace CSharpOOP
             kenshin.Greetings();
             samurai.Greetings();
             musashi.Greetings();
-        } //Application of Polymorphism
+        }  //goods
         public static void GivingAbilitiesToHeroesScenario()
         {
             // created two samurai object
@@ -110,15 +92,15 @@ namespace CSharpOOP
             // see target hp after casting skill
             Samurai.SeeStatus(samurai2);
            
-        } // logic of ability slot function
+        } //not good
         public static void fightScenario() 
         {
             Samurai samurai = new Samurai();
             Musashi musashi = new Musashi();
             samurai.AbilitySlot.Ability[0] = new OmniSlash();
             musashi.AbilitySlot.Ability[0] = new OmniSlash();
-            samurai.Inventory.Item[0] = new Blade(samurai);
-            musashi.Inventory.Item[0] = new Blade(musashi);
+            samurai.Inventory.Item[0] = new Blade();
+            musashi.Inventory.Item[0] = new Blade();
             samurai.HealthPoints = samurai.HealthPoints + 3000;
             samurai.Name = "samurai";
             musashi.HealthPoints = musashi.HealthPoints + 2000;
@@ -127,13 +109,13 @@ namespace CSharpOOP
             Hero.SeeStatus(samurai);
             for (int x = 0; x < 5; x++)
             {
-               // samurai.Attack(musashi);
-               // musashi.Attack(samurai);
+                //samurai.Attack(musashi);
+                //musashi.Attack(samurai);
             }          
             Hero.SeeStatus(musashi);
             Hero.SeeStatus(samurai);
 
-        }// logic of two units taking damage
+        }//not good
         public static void gainingExpScenario()
         {
             Samurai samurai1 = new Samurai();
@@ -143,7 +125,7 @@ namespace CSharpOOP
             Samurai samurai5 = new Samurai();
             samurai1.Name = "Naruto";
             samurai2.Name = "Sasuke";
-            Blade blade1 = new Blade(samurai1);
+            Blade blade1 = new Blade();
             samurai1.Inventory.Item[0] = blade1;
             samurai2.HealthPoints = 1000;
             samurai1.AttackSpeed = 300;
@@ -154,25 +136,7 @@ namespace CSharpOOP
             Console.WriteLine($"{samurai1.Name} experience points: {samurai1.ExperiencePoints}");
             samurai1.Attack(samurai4, true);
             Console.WriteLine($"{samurai1.Name} experience points: {samurai1.ExperiencePoints}");
-        }//Done
-        public static void itemGainingDamagePerKillScenario()
-        {
-            Samurai samurai1 = new Samurai();
-            Samurai samurai2 = new Samurai();
-            samurai1.Name = "Naruto";
-            samurai2.Name = "Sasuke";
-            Blade blade1 = new Blade(samurai1);
-            samurai1.Inventory.Item[0] = blade1;
-            Console.WriteLine($"Naruto blade damage: {blade1.Damage}\n");
-            
-            samurai2.HealthPoints = 1000;
-            samurai1.AttackSpeed = 300;
-
-            samurai1.Attack(samurai2, true);
-            blade1.Damage = blade1.Damage + 10;
-
-            Console.WriteLine($"Naruto blade damage: {blade1.Damage}");
-        } //Done
+        }//not good
         public static void attackSpeedScenario()
         {
             Samurai samurai1 = new Samurai();
@@ -192,6 +156,7 @@ namespace CSharpOOP
         {
             Samurai samurai1 = new Samurai();
             Samurai samurai2 = new Samurai();
+
             samurai1.Name = "Goruto";
             samurai2.Name = "Sasuke";
 
@@ -201,10 +166,7 @@ namespace CSharpOOP
             samurai2.ArmorPoints = 3;
 
             samurai1.Attack(samurai2, true);
-
-
-
-        }//Done
+        }//goods
         public static void criticalStrikeChanceScenario()
         {
             Samurai samurai = new Samurai();
@@ -220,14 +182,6 @@ namespace CSharpOOP
                 Thread.Sleep(samurai.AttackSpeed-500);
             }
             
-        }//Done
-        public static void movementScenario()
-        {
-
-        }
-        public static void stopMovingScenario()
-        {
-
-        }
+        }//goods
     }
 }

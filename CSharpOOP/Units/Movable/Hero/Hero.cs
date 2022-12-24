@@ -12,8 +12,7 @@ namespace CSharpOOP.Units.Movable.Hero
 {
     public abstract class Hero : Movable
     {
-        
-
+       
         private const int DEFAULT_LEVEL = 1;
         private const int DEFAULT_SKILL_POINTS = 1;
         private const int DEFAULT_STRENGTH = 10;
@@ -184,7 +183,7 @@ namespace CSharpOOP.Units.Movable.Hero
 
         public abstract void Attack2(Hero hero);
         public abstract void Attack(Unit unit,bool start);
-        public abstract void PickUpItem(Equipments equipment, int slot);
+        public abstract void PickUpItem(Equipm equipment);
         public abstract void SkillCast(Unit unit, Ability ability);
         public abstract void getAbility(Ability ability, int slot);
         public abstract void Greetings();
@@ -205,13 +204,13 @@ namespace CSharpOOP.Units.Movable.Hero
                 $"strength:{hero.Strength}\n" +
                 $"agility:{hero.Agility}\n" +
                 $"intelligence:{hero.Intelligence}\n" +
-                $"mana: {hero.ManaPoints}\n" +
-                $"Slot 1: {hero.Inventory.Item[0].ToString()}\n");
-                //$"Slot 2: {hero.Inventory.Item[1].ToString()}\n" +
-                //$"Slot 3: {hero.Inventory.Item[2].ToString()}\n" +
-                //$"Slot 4: {hero.Inventory.Item[3].ToString()}\n" +
-                //$"Slot 5: {hero.Inventory.Item[4].ToString()}\n" +
-                //$"Slot 6: {hero.Inventory.Item[5].ToString()}\n");
+                $"mana: {hero.ManaPoints}\n"+
+                $"Slot 1: {hero.Inventory.Item[0].Name}\n"+
+                $"Slot 2: {hero.Inventory.Item[1].Name}\n" +
+                $"Slot 3: {hero.Inventory.Item[2].Name}\n" +
+                $"Slot 4: {hero.Inventory.Item[3].Name}\n" +
+                $"Slot 5: {hero.Inventory.Item[4].Name}\n" +
+                $"Slot 6: {hero.Inventory.Item[5].Name}\n");
         }
 
     }

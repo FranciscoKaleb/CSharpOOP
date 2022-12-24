@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CSharpOOP.Equipment;
+using CSharpOOP.Equipments.WeaponTypes;
 
 namespace CSharpOOP.Abilities.Hero
 {
     public class ItemInventory
     {
-        private Equipments[] item;
+        private Equipm[] item;
 
-        public Equipments[] Item
+        public  Equipm[] Item
         {
             get
             {
@@ -25,7 +26,13 @@ namespace CSharpOOP.Abilities.Hero
 
         public ItemInventory()
         {
-            item = new Equipments[6];
+            Item = new Equipm[6];
+            Item[0] = new ItemPlaceHolder();
+            Item[1] = new ItemPlaceHolder();
+            Item[2] = new ItemPlaceHolder();
+            Item[3] = new ItemPlaceHolder();
+            Item[4] = new ItemPlaceHolder();
+            Item[5] = new ItemPlaceHolder();
 
         }
     }

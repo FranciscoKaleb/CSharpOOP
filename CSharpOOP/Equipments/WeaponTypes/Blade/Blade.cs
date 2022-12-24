@@ -9,10 +9,17 @@ namespace CSharpOOP.Equipment.WeaponTypes.Blade
 {
     public class Blade : Weapon
     {
-        public Blade(Hero receiver)
+        public Blade()
         {
             Damage = 80;
-            receiver.BaseDamage = receiver.BaseDamage + Damage;
+            Name = "Blade";
+            Description = "This blade provides 80 Damage and 30 attackspeed";
+            AttackSpeed = 30;
+        }
+        public override void IsPickedUp(Hero picker)
+        {
+            picker.BaseDamage = picker.BaseDamage + this.Damage;
+            picker.AttackSpeed = picker.AttackSpeed + this.AttackSpeed;
         }
     }
 }

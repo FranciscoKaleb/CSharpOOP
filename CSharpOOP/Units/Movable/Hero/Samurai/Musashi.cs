@@ -42,9 +42,9 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
         {
             target.HealthPoints = target.HealthPoints - (this.AbilitySlot.Ability[0].Damage);
         }
-        public override void PickUpItem(Equipments equipment, int slot)
+        public override void PickUpItem(Equipm equipment)
         {
-            Inventory.Item[slot] = equipment;
+            //Inventory.Item[slot] = equipment;
             BaseDamage = BaseDamage + equipment.Damage;
 
         }

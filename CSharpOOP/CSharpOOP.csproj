@@ -9,8 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Abilities\NonHero\" />
-    <Folder Include="Units\Movable\Hero\Knight\" />
-    <Folder Include="Units\Movable\Hero\Mage\" />
     <Folder Include="Units\Movable\NonHero\" />
     <Folder Include="Units\Structures\AttackTower\" />
     <Folder Include="Units\Structures\Building\" />

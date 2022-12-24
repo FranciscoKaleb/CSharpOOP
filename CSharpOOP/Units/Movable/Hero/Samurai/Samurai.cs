@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CSharpOOP.Equipment.WeaponTypes;
-
+using System.Security.Cryptography.X509Certificates;
 
 namespace CSharpOOP.Units.Movable.Hero.Samurai
 {
@@ -45,11 +45,22 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
         {
             target.HealthPoints = target.HealthPoints - (AbilitySlot.Ability[0].Damage);
         }       
-        public override void PickUpItem(Equipments equipment, int slot)
+        public override void PickUpItem(Equipm equipment)
         {
-            Inventory.Item[slot] = equipment;
-            BaseDamage = BaseDamage + equipment.Damage;
-            
+            //loop through inventory to chose a slot 0,1,2,3,4,5
+            for (int slot = 0; slot < 6; slot++)
+            {
+                if(this.Inventory.Item[slot].Name == "empty")
+                {
+                    this.Inventory.Item[slot] = equipment;
+                    equipment.IsPickedUp(this);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Inventory is full");
+                }
+            }                       
         }
         public override void Attack(Unit unit, bool start)
         {
@@ -67,15 +78,18 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
                     gainExp((Hero)unit);
                 }            
             }  
-        }
+        }//bad approach
         public override void Attack2(Hero target)
         {
             target.isAttacked(ApplyCritical(this.BaseDamage),this);
-        }
+        }   //a bit better approach
         public override void isAttacked(int totalDamage, Hero attacker)
         {
-            totalDamage = totalDamage - ArmorPoints;
-            HealthPoints = HealthPoints - totalDamage;
+            totalDamage = totalDamage - this.ArmorPoints;
+            this.HealthPoints = this.HealthPoints - totalDamage;
+            //if(attacker has Equipment.Frost)
+            //{this.MovementSpeed = this.MovementSpeed - %%}
+            //DamageReduction()
         }
         public int ApplyCritical(int damage)
         {
