@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CSharpOOP.Equipment.WeaponTypes;
 using System.Security.Cryptography.X509Certificates;
+using CSharpOOP.Abilities.Hero.Samurai;
 
 namespace CSharpOOP.Units.Movable.Hero.Samurai
 {

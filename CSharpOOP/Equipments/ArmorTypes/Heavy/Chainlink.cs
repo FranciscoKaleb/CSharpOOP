@@ -15,6 +15,7 @@ namespace CSharpOOP.Equipment.ArmorTypes.Heavy
             Name = "ChainLink";
             Description = "Adds 15 Armor";
         }
+
         public override void IsPickedUp(Hero picker)
         {
             picker.ArmorPoints = picker.ArmorPoints + this.Armor;   

@@ -10,7 +10,7 @@ using CSharpOOP.Units.Movable;
 using CSharpOOP.Units.Movable.Hero;
 using CSharpOOP.Units.Movable.Hero.Samurai;
 using CSharpOOP.Equipment.WeaponTypes.Blade;
-using CSharpOOP.Abilities.Hero;
+using CSharpOOP.Abilities.Hero.Samurai;
 using CSharpOOP.Abilities;
 using System.Diagnostics;
 
@@ -38,11 +38,12 @@ namespace CSharpOOP
             Samurai.SeeStatus(hero);
             Samurai.SeeStatus(hero2);
 
-            // Casting skill of samurai 1 to samurai 2
-            hero.SkillCast(hero2, hero.OmniSlash);
+            //giving/leveling up skill
 
-            // Outputs the status of hero2 reduced damage
-            Samurai.SeeStatus(hero2);
+            //casting skill
+
+            //seeTargetStatus
+
         }  //not good
         public static void ItemAcquiringScenario()
         {

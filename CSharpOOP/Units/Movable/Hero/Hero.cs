@@ -185,6 +185,7 @@ namespace CSharpOOP.Units.Movable.Hero
         public abstract void Attack(Unit unit,bool start);
         public abstract void PickUpItem(Equipm equipment);
         public abstract void SkillCast(Unit unit, Ability ability);
+        //public abstract void CastedUpon(Ability ability, Hero Caster);
         public abstract void getAbility(Ability ability, int slot);
         public abstract void Greetings();
         public abstract void gainExp(Hero killed);
