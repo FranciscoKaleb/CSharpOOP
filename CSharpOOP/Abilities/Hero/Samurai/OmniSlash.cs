@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpOOP.Abilities.Hero
+namespace CSharpOOP.Abilities.Hero.Samurai
 {
     public class OmniSlash : Ability
     {
@@ -20,7 +20,7 @@ namespace CSharpOOP.Abilities.Hero
         {
             Damage = 10;
         }
-            
+
 
     }
 }

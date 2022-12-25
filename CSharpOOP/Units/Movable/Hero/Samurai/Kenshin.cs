@@ -1,5 +1,6 @@
 ﻿using CSharpOOP.Abilities;
 using CSharpOOP.Abilities.Hero;
+using CSharpOOP.Abilities.Hero.Samurai;
 using CSharpOOP.Equipment;
 using CSharpOOP.Equipment.WeaponTypes.Blade;
 using CSharpOOP.Interfaces;
