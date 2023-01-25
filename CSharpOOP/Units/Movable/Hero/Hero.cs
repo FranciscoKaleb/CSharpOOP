@@ -156,7 +156,7 @@ namespace CSharpOOP.Units.Movable.Hero
             get { return abilitySlot; } 
             set { abilitySlot = value; }
         }
-
+        // some change
         public Hero()
         {
             Level = DEFAULT_LEVEL;
