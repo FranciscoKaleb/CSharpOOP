@@ -158,12 +158,22 @@ namespace CSharpOOP.Units.Movable.Hero
         }
 
         public Hero()
-            :this(DEFAULT_LEVEL,DEFAULT_EXPERIENCE_POINTS, DEFAULT_SKILL_POINTS, DEFAULT_STRENGTH, DEFAULT_AGILITY
-                 ,DEFAULT_INTELLIGENCE,DEFAULT_MANA_POINTS, DEFAULT_BASE_DAMAGE, DEFAULT_ATTACK_SPEED)
         {
-
+            Level = DEFAULT_LEVEL;
+            ExperiencePoints = DEFAULT_EXPERIENCE_POINTS;
+            SkillPoints = DEFAULT_SKILL_POINTS;
+            Strength = DEFAULT_STRENGTH;
+            Agility = DEFAULT_AGILITY;
+            Intelligence = DEFAULT_INTELLIGENCE;
+            ManaPoints = DEFAULT_MANA_POINTS;
+            BaseDamage = DEFAULT_BASE_DAMAGE;
+            AttackSpeed = DEFAULT_ATTACK_SPEED;
+            HealthPoints = 500;
+            IsAlive = true;
+            Inventory = new ItemInventory();
+            AbilitySlot = new AbilitySlot();
         }
-        public Hero(int level, int experiencePoints, int skillPoints, int strength, int agility,
+        /*public Hero(int level, int experiencePoints, int skillPoints, int strength, int agility,
             int intelligence, int manaPoints, int baseDamage, int attackSpeed)
         {
             Level = level;
@@ -179,7 +189,7 @@ namespace CSharpOOP.Units.Movable.Hero
             IsAlive = true;
             Inventory = new ItemInventory();
             AbilitySlot = new AbilitySlot();
-        }
+        }*/
 
         public abstract void Attack2(Hero hero);
         public abstract void Attack(Unit unit,bool start);
