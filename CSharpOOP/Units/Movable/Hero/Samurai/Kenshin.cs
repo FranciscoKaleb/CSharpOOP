@@ -41,6 +41,11 @@ namespace CSharpOOP.Units.Movable.Hero.Samurai
         {
             OmniSlash = new OmniSlash();
         }
+        public Kenshin(string name)
+            :base()
+        {
+            OmniSlash = new OmniSlash();
+        }
 
         // methods
         public override void SkillCast(Unit target, Ability OmniSlash)
