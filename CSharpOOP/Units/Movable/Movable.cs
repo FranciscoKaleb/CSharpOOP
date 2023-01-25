@@ -39,14 +39,15 @@ namespace CSharpOOP.Units.Movable
         }
 
         public Movable()
+            :this(DEFAULT_MOVEMENT_SPEED,DEFAULT_MOVEMENT_TYPE)
         {
-            MovementSpeed = DEFAULT_MOVEMENT_SPEED;
-            MovementType = DEFAULT_MOVEMENT_TYPE;
+
         }
-        /*public Movable(int movementSpeed, MovementType movementType)
+        public Movable(int movementSpeed, MovementType movementType)
         {
-            
-        }*/
+            MovementSpeed = movementSpeed;
+            MovementType = movementType;
+        }
 
         public abstract void Move(int pauseBetweenMove);
         public abstract void Stop(Unit unit);

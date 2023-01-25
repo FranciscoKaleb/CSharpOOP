@@ -79,13 +79,17 @@ namespace CSharpOOP.Units
         }
 
         public Unit()
+            : this(DEFAULT_NAME, DEFAULT_HEALTH_POINTS, DEFAULT_ARMOR_POINTS, DEFAULT_ARMOR_TYPE)
         {
-            Name = DEFAULT_NAME;
-            HealthPoints = DEFAULT_HEALTH_POINTS;    
-            ArmorPoints = DEFAULT_ARMOR_POINTS;
-            ArmorType = DEFAULT_ARMOR_TYPE;
-        }
 
+        }
+        public Unit(string name, int healthPoints, int armorPoints, ArmorType armorType)
+        {
+            Name = name;
+            HealthPoints = healthPoints;    
+            ArmorPoints = armorPoints;
+            ArmorType = armorType;
+        }
         
       
     }
